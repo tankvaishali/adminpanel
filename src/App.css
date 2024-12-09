@@ -3,7 +3,7 @@
   height: 100vh;
 }
 .sidebar {
-  background-image: linear-gradient(#081e41, #081e41, #081e41dc, #0d244abc);
+  background-image: linear-gradient(#0a1d3d, #081f44, #1d3d70dc, #a5b7d3bc);
   width: 250px;
   position: relative;
   height: 100vh;
@@ -31,6 +31,7 @@ input {
   height: 70px;
 }
 .gradient-btn {
+  
   background: linear-gradient(to left, #081e41, #081e41, #081e41dc, #0d244abc);
   padding: 10px 20px;
   transition: background-size 0.4s ease-in-out;
@@ -55,16 +56,16 @@ input {
   width: 100%;
 }
 .table th {
-  border: 2px solid #000 !important;
+  border: 3px solid white !important;
 }
 .table td {
-  border: 1px solid grey !important;
+  border: 1px solid rgb(172, 172, 172) !important;
 }
 .table tbody tr:nth-child(even) td {
   background-color: rgba(211, 211, 211, 0.377);
 }
 .table tbody tr:nth-child(odd) td {
-  background-color: lightgray;
+  background-color: rgba(211, 211, 211, 0.377);
 }
 
 /* LoginPage start */
@@ -90,3 +91,9 @@ input {
   }
 }
 /* LoginPage end */
+/* table start */
+.tablecolor{
+  background-image: linear-gradient(#0a1d3d, #081f44, #1d3d70dc, #a5b7d3bc) !important;
+
+}
+/* table end */
