@@ -9,7 +9,7 @@ function ManageData() {
     // Fetch data from the API
     const fetchData = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/api/data");
+            const response = await axios.get("https://tharayildb.vercel.app/api/data");
             setData(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);
@@ -23,7 +23,7 @@ function ManageData() {
     // Handle delete action
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://localhost:5000/api/data/${id}`);
+            await axios.delete(`https://tharayildb.vercel.app/api/data/${id}`);
             Swal.fire({
                 icon: "success",
                 title: "Data deleted successfully!",
