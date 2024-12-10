@@ -53,7 +53,7 @@ function ManageData() {
                             <th className="tablecolor  text-white" style={{ width: "20%" }}>Tittle</th>
                             <th className="tablecolor  text-white" style={{ width: "30%" }}>Description</th>
                             <th className="tablecolor  text-white" style={{ width: "15%" }}>Date</th>
-                            <th className="tablecolor  text-white" style={{ width: "15%" }}>Action</th>
+                            <th className="tablecolor  text-white" style={{ width: "15%" }}>Action </th>
                         </tr>
                     </thead>
                     <tbody className="border-transparent border-3 align-middle">
