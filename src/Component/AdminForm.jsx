@@ -17,7 +17,8 @@ function AdminForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5000/api/data", {
+            // await axios.post("http://localhost:5000/api/data", {
+            await axios.post("https://admindb-indol.vercel.app/api/data", {
                 title,
                 description,
                 date,
