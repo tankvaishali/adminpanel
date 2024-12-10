@@ -58,16 +58,16 @@ function ManageData() {
                     </thead>
                     <tbody className="border-transparent border-3 align-middle">
                         {data.map((item, index) => (
-                            <tr key={item.id} className="text-center w-100">
+                            <tr key={index} className="text-center w-100">
                                 <td style={{ width: "5%" }}>{index + 1}</td>
                                 <td style={{ width: "15%" }}>
-                                  
-                                        <img
-                                            src={item.imageUrl}
-                                            alt="not found"
-                                            style={{ width: "50px", height: "50px" }}
-                                        />
-                                    
+
+                                    <img
+                                        src={item.imageUrl}
+                                        alt="not found"
+                                        style={{ width: "50px", height: "50px" }}
+                                    />
+
                                 </td>
                                 <td style={{ width: "20%" }}>{item.title}</td>
                                 <td style={{ width: "30%" }}>{item.description}</td>

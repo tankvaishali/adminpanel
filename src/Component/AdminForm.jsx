@@ -42,14 +42,39 @@ function AdminForm() {
         }
     };
 
-    const handleImageChange = (e) => {
+    const handleImageChange = async (e) => {
+        // const file = e.target.files[0];
+        // if (file) {
+        //     const reader = new FileReader();
+        //     reader.onloadend = () => {
+        //         setImageUrl(reader.result);
+        //     };
+        //     reader.readAsDataURL(file);
+        // }
+
         const file = e.target.files[0];
         if (file) {
-            const reader = new FileReader();
-            reader.onloadend = () => {
-                setImageUrl(reader.result);
-            };
-            reader.readAsDataURL(file);
+            const formData = new FormData();
+            formData.append("image", file);
+
+            try {
+                const response = await axios.post("https://api.imgbb.com/1/upload", formData, {
+                    params: {
+                        key: "c7ccbf489e4b3b55f9d2366d818d5515", // Replace with your API key
+                    },
+                });
+                const { data } = response.data;
+                setImageUrl(data.url); // Short URL provided by ImgBB
+                console.log(data.url);
+
+            } catch (error) {
+                Swal.fire({
+                    icon: "error",
+                    title: "Image upload failed",
+                });
+                console.log("error");
+
+            }
         }
     };
 
