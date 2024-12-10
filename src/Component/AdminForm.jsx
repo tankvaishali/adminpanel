@@ -17,7 +17,7 @@ function AdminForm() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("https://tharayildb.vercel.app/api/data", {
+            await axios.post("http://localhost:5000/api/data", {
                 title,
                 description,
                 date,
