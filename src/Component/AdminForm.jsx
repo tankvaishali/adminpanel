@@ -12,6 +12,8 @@ function AdminForm() {
     const [description, setDescription] = useState("");
     const [date, setDate] = useState("");
     const [imageUrl, setImageUrl] = useState("");
+    const [Loader, setLoader] = useState(false);
+
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -51,11 +53,11 @@ function AdminForm() {
         //     };
         //     reader.readAsDataURL(file);
         // }
-
         const file = e.target.files[0];
         if (file) {
             const formData = new FormData();
             formData.append("image", file);
+            setLoader(true)
 
             try {
                 const response = await axios.post("https://api.imgbb.com/1/upload", formData, {
@@ -66,6 +68,7 @@ function AdminForm() {
                 const { data } = response.data;
                 setImageUrl(data.url); // Short URL provided by ImgBB
                 console.log(data.url);
+                setLoader(false)
 
             } catch (error) {
                 Swal.fire({
@@ -80,68 +83,79 @@ function AdminForm() {
 
     return (
         <>
+            {/* {Loader 
+                ?
+                <div className="vh-100">
+                    <img src={require('../assets/Image/bg_image-transformed.avif')} alt="not found" height={300} width={300} className="m-auto" />
+                </div>
+                :  */}
+            <div>
+                <h2 className="text-center fw-bold pt-5 pb-3 pt-lg-0 pb-lg-0">Add New Data</h2>
+                <div className="form-card py-0 px-0 py-lg-3 px-lg-5">
+                    <Form onSubmit={handleSubmit}>
+                        <Form.Group controlId="tittle">
+                            <Form.Label className="form-label fw-bold">
+                                <MdOutlineSubtitles className="fs-5" /> Title
+                            </Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={title}
+                                onChange={(e) => setTitle(e.target.value)}
+                                placeholder="Enter Title"
+                                className="form-input border border-1 border-secondary"
+                            />
+                        </Form.Group>
 
-            <h2 className="text-center fw-bold pt-5 pb-3 pt-lg-0 pb-lg-0">Add New Data</h2>
-            <div className="form-card py-0 px-0 py-lg-3 px-lg-5">
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group controlId="tittle">
-                        <Form.Label className="form-label fw-bold">
-                            <MdOutlineSubtitles className="fs-5" /> Title
-                        </Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={title}
-                            onChange={(e) => setTitle(e.target.value)}
-                            placeholder="Enter Title"
-                            className="form-input border border-1 border-secondary"
-                        />
-                    </Form.Group>
+                        <Form.Group controlId="date" className="mt-4">
+                            <Form.Label className="form-label fw-bold">
+                                <MdDateRange className="fs-5" /> Date
+                            </Form.Label>
+                            <Form.Control
+                                type="date"
+                                value={date}
+                                onChange={(e) => setDate(e.target.value)}
+                                className="form-input border border-1 border-secondary"
+                            />
+                        </Form.Group>
 
-                    <Form.Group controlId="date" className="mt-4">
-                        <Form.Label className="form-label fw-bold">
-                            <MdDateRange className="fs-5" /> Date
-                        </Form.Label>
-                        <Form.Control
-                            type="date"
-                            value={date}
-                            onChange={(e) => setDate(e.target.value)}
-                            className="form-input border border-1 border-secondary"
-                        />
-                    </Form.Group>
+                        <Form.Group controlId="description" className="mt-4">
+                            <Form.Label className="form-label fw-bold">
+                                <TbFileDescription className="fs-5" /> Description
+                            </Form.Label>
+                            <Form.Control
+                                type="text"
+                                value={description}
+                                onChange={(e) => setDescription(e.target.value)}
+                                placeholder="Enter Description"
+                                className="form-input border border-1 border-secondary"
+                            />
+                        </Form.Group>
 
-                    <Form.Group controlId="description" className="mt-4">
-                        <Form.Label className="form-label fw-bold">
-                            <TbFileDescription className="fs-5" /> Description
-                        </Form.Label>
-                        <Form.Control
-                            type="text"
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                            placeholder="Enter Description"
-                            className="form-input border border-1 border-secondary"
-                        />
-                    </Form.Group>
+                        <Form.Group controlId="picture" className="mt-4">
+                            <Form.Label className="form-label fw-bold">
+                                <ImFilePicture className="fs-5" /> Picture
+                            </Form.Label>
+                            <Form.Control
+                                type="file"
+                                onChange={handleImageChange}
+                                className="form-input border border-1 border-secondary"
+                            />
+                        </Form.Group>
 
-                    <Form.Group controlId="picture" className="mt-4">
-                        <Form.Label className="form-label fw-bold">
-                            <ImFilePicture className="fs-5" /> Picture
-                        </Form.Label>
-                        <Form.Control
-                            type="file"
-                            onChange={handleImageChange}
-                            className="form-input border border-1 border-secondary"
-                        />
-                    </Form.Group>
-
-                    <Button
-                        variant="primary"
-                        type="submit"
-                        className="mt-4 w-100 gradient-btn border-none text-white fw-bold"
-                    >
-                        SUBMIT
-                    </Button>
-                </Form>
+                        <Button
+                            variant="primary"
+                            type="submit"
+                            className="mt-4 w-100 gradient-btn border-none text-white fw-bold"
+                        >
+                            SUBMIT
+                        </Button>
+                    </Form>
+                </div>
+                <div className={Loader ? "vh-100 w-100 top-50 start-50 translate-middle bg-dark" : "d-none"}>
+                    <img src={require('../assets/Image/bg_image-transformed.avif')} alt="not found" height={300} width={300} />
+                </div>
             </div>
+            {/* } */}
         </>
     );
 }
