@@ -43,7 +43,7 @@ function ManageData() {
 
     return (
         <div>
-            <h2 className="text-center fw-bold pt-5 pb-3 pt-lg-0 pb-lg-0">Manage Data</h2>
+            <h2 className="text-center fw-bold pt-5 pb-3 pt-lg-0 pb-lg-0">Manage Blog Data</h2>
             <div className="table-responsive py-0 px-0 py-lg-3">
                 <table className="table table-bordered border-white table-striped">
                     <thead className="thead-dark  tablecolor">

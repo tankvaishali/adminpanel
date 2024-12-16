@@ -21,26 +21,23 @@ function Sidebar() {
         <>
             {/* Sidebar content for medium and larger screens */}
             <div className="sidebar d-flex flex-column p-4 d-none d-md-block">
-                <h4 className="text-white my-4">
-                    <MdAdminPanelSettings className="fs-1" /> Admin
-                </h4>
-                <div className="sidebar-header d-flex align-items-center mb-4">
-                    <img
-                        src="https://demo2.themelexus.com/kitchor/wp-content/uploads/2022/06/avatar_002.png"
-                        alt=""
-                        className="rounded-circle sidebar-image me-3 border border-2 border-white object-fit-cover"
-                    />
-                    <div>
-                        <h5 className="text-white my-2">Welcome,</h5>
-                        <h6 className="text-white">John Doe</h6>
+                <h4 className="text-white mb-4 fs-1 d-flex align-content-center align-items-center">
+                    <div><MdAdminPanelSettings  />
+                        </div> <div className="fs-4 pt-2">
+
+                    Tharayil Power
                     </div>
+                </h4>
+                <div className="sidebar-header  mb-4">
+                    <img
+                        src={require("../assets/Image/logo.png")}
+                        alt=""
+                        className="img-fluid   object-fit-cover"
+                    />
+                
                 </div>
-                <Nav className="flex-column p-2">
-                    <Nav.Item>
-                        <Link to="/" className={`text-decoration-none nav-item text-white`} onClick={handleLinkClick}>
-                            <FaHome className="me-2" /> <span className="sidebar_menu">Dashboard</span>
-                        </Link>
-                    </Nav.Item>
+                <Nav className="flex-column p-2 pt-0">
+                 
                     <Nav.Item className="my-3">
                         <Link to="/" className={`text-decoration-none nav-item text-white`} onClick={handleLinkClick}>
                             <FaPlusCircle className="me-2" /> <span className="sidebar_menu">Add Data</span>
@@ -51,11 +48,7 @@ function Sidebar() {
                             <FaList className="me-2" /> <span className="sidebar_menu">Manage Data</span>
                         </Link>
                     </Nav.Item>
-                    {/* <Nav.Item className="my-3">
-                        <Link to="/" className={`text-decoration-none nav-item text-white ${isActiveLink('/')}`} onClick={handleLinkClick}>
-                            <FaCog className="me-2" /> <span className="sidebar_menu">Settings</span>
-                        </Link>
-                    </Nav.Item> */}
+                 
                 </Nav>
 
                 <div className="logout-btn">
