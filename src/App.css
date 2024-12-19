@@ -1,10 +1,10 @@
 .loadershow {
-  position: fixed; /* Make the loader cover the entire screen */
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
-  z-index: 9999; /* Ensure it appears above all other elements */
+  z-index: 9999;
   background-color: white;
   display: flex;
   align-items: center;
@@ -44,7 +44,6 @@ input {
   height: 70px;
 }
 .gradient-btn {
-  
   background: linear-gradient(to left, #081e41, #081e41, #081e41dc, #0d244abc);
   padding: 10px 20px;
   transition: background-size 0.4s ease-in-out;
@@ -80,7 +79,6 @@ input {
 .table tbody tr:nth-child(odd) td {
   background-color: rgba(211, 211, 211, 0.377);
 }
-
 /* LoginPage start */
 .main_login {
   display: flex;
@@ -104,9 +102,14 @@ input {
   }
 }
 /* LoginPage end */
-/* table start */
-.tablecolor{
-  background-image: linear-gradient(#0a1d3d, #081f44, #1d3d70dc, #a5b7d3bc) !important;
 
+/* table start */
+.tablecolor {
+  background-image: linear-gradient(
+    #0a1d3d,
+    #081f44,
+    #1d3d70dc,
+    #a5b7d3bc
+  ) !important;
 }
 /* table end */
