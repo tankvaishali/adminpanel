@@ -21,14 +21,7 @@ function Sidebar() {
         <>
             {/* Sidebar content for medium and larger screens */}
             <div className="sidebar d-flex flex-column p-4 d-none d-md-block">
-                <h4 className="text-white mb-4 fs-1 d-flex align-content-center align-items-center">
-                    <div><MdAdminPanelSettings />
-                    </div> <div className="fs-4 pt-2">
-
-                        Tharayil Power
-                    </div>
-                </h4>
-                <div className="sidebar-header  mb-4">
+                <div className="sidebar-header  my-4">
                     <img
                         src={require("../assets/Image/logo.png")}
                         alt=""
@@ -63,11 +56,7 @@ function Sidebar() {
                 onHide={() => setShowSidebar(false)}
                 className="sidebar"
             >
-                <Offcanvas.Header closeButton className="mt-3 mx-2">
-                    <Offcanvas.Title className="text-white fs-1">
-                        <MdAdminPanelSettings className="display-2" /> Tharayil Power
-                    </Offcanvas.Title>
-                </Offcanvas.Header>
+                <Offcanvas.Header closeButton className="mt-3 mx-2"></Offcanvas.Header>
                 <Offcanvas.Body className="mx-2">
                     <div className="sidebar-header  mb-4">
                         <img
